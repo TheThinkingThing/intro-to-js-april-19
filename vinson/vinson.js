@@ -3,7 +3,16 @@
     document.body.appendChild(container);
     container.style['background-color'] = 'aqua';
     document.body.style.backgroundColor = 'green';
+<<<<<<< HEAD
     container.innerText = 'hello';
+=======
+    container.innerText = 'Vinson';
+})();
+
+
+
+
+>>>>>>> 97c62ed3b4ce636234d348282e65f205252da221
 
 
     function createCarousel(parent, imgList) {
