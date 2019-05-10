@@ -6,7 +6,7 @@ const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
 const img = document.querySelector('img');
 const width = 360;
-const height = 640;
+const height = 640;s
 
 // context.fillStyle = 'black';
 // context.fillRect(100, 100, 100, 100);
