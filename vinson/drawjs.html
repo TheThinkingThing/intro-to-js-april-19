@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset= 'utf-8'>
+        <title> Drawing </title>
+        <style>
+            body{
+                background-image: url('http://www.dream-wallpaper.com/free-wallpaper/art-wallpaper/creative-design-4-wallpaper/1920x1200/free-wallpaper-18.jpg');
+                font-family:Arial, Helvetica, sans-serif;
+                color:azure;
+                margin-left:15%;
+                padding:0px;
+            }
+
+            button{
+                font-weight:bold;
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            canvas {
+                border: 1px solid black;
+                background-color:rgba(255,255,255,.8);
+                
+                }
+
+            .edits {
+                display: block;
+                font: ;
+                backround-color: black;
+                text-align: left;
+                width: =50%;
+                }
+
+            h4{
+                margin-left:15%;
+                }
+        </style>
+
+        <div class="edits"> <h1>Draw Something, Erase It, Then Draw It Some More!</h1> <h4>Options</h4> 
+            <button onclick="window.location.reload()">RESET</button>
+            <button onclick="color = 'black'">black</button>
+            <button onclick="color = 'red'">red</button>
+            <button onclick="color = 'orange'">orange</button>
+            <button onclick="color = 'yellow'">yellow</button>
+            <button onclick="color = 'green'">green</button>
+            <button onclick="color = 'blue'">blue</button>
+            <button onclick="color = 'indigo'">indigo</button>
+            <button onclick="color = 'violet'">violet</button>
+            <button onclick="color = 'rgba(255,255,255,.7)'">eraser</button>
+            <button onclick="size =40">Brush size 40</button> 
+            <button onclick ="size =20">Brush size 20</button>
+            <button onclick="size =10">Brush size 10</button>
+            <button onclick="size =5"> Brush size 5</button>
+            <button onclick="size =1"> Brush size 1</button>
+        </div>
+    </head>
+
+    <body>
+
+    <canvas id="gc" width="1200" height="600"> 
+        <script "text/javascript"> 
+        var size = 4; 
+        var mousedown =false; 
+        var color = 'black';
+        canvas=document.getElementById('gc'); 
+        canvas.addEventListener('mousedown',down); 
+        canvas.addEventListener('mouseup',toggledraw); 
+        canvas.addEventListener('mousemove', 
+        function(evt){ var mousePos = getMousePos(canvas,evt); 
+        var posx = mousePos.x; 
+        var posy = mousePos.y; 
+        draw(canvas,posx,posy); }); 
+        function down(){ 
+            mousedown = true; 
+            } 
+        function toggledraw(){
+            mousedown = false; 
+            canvas.style.cursor="default"; 
+            } 
+        function getMousePos(canvas,evt){ 
+            var rect = canvas.getBoundingClientRect(); 
+                return{ x:evt.clientX - rect.left, 
+                        y:evt.clientY - rect.top 
+                    }; 
+            } 
+        function draw(canvas,posx,posy){ 
+            var context =canvas.getContext('2d'); 
+        if(mousedown){
+            canvas.style.cursor="pointer"; 
+            context.fillStyle=color; 
+            context.fillRect(posx,posy,size,size); 
+                } 
+            } 
+        </script> 
+        <!--<canvas id="gc" width = "500" height = "300">-->
+    </canvas>    
+
+    </body>
+
+</html>
